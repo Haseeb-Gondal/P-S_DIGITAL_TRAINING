@@ -1,3 +1,19 @@
+
+
+
+
+
+HASEEB ADDING NEW CODE TO a.sql
+csnskncks
+csjd vjsd
+
+
+
+
+
+
+
+
 select 
 "DFX Cycle",
 "DFX Form",
@@ -9,11 +25,7 @@ select
 "Metric Key",
 "DFX Segment",
 "DFX Segment Descr",
-"DFX Target RU Name",
-"DFX Target RU",
-"KBOE",
-"Month Vol / Day",
-"Monthly_Variance",
+
 "Dataflex Value",
 "DFX Value YNY $M",
 "Quarter Vol /Day",
