@@ -123,33 +123,96 @@ END AS "Non Cash YTD Plan",
 
 ///////////////////////////////////////Earnings///////////////////////////////////////
 
-CASE WHEN
-"Metric Key" = 'UXM/2000/0110/01'
-THEN "Monthly_Variance"
+CASE WHEN "DFX Cycle" = 'EXM'
+AND "DFX Form" = '1000'
+AND "DFX Column" = '1'
+AND "DFX Line" = '10' THEN "Dataflex Value"
+END AS "Op Earn YTD Actual",
+
+CASE WHEN "DFX Cycle" = 'USF'
+AND "DFX Form" = '1000'
+AND "DFX Column" = '1'
+AND "DFX Line" = '10' THEN "Dataflex Value"
+END AS "Op Earn YTD Plan",
+
+CASE WHEN "DFX Cycle" = 'EXM'
+AND "DFX Form" = '1000'
+AND "DFX Column" = '1'
+AND "DFX Line" = '20' THEN "Dataflex Value"
+END AS "OEE YTD Actual",
+
+CASE WHEN "DFX Cycle" = 'EXM'
+AND "DFX Form" = '1000'
+AND "DFX Column" = '1'
+AND "DFX Line" in ('20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39') THEN "Dataflex Value"
+END AS "Others including OEE Earnings YTD Actual",
+
+CASE WHEN "DFX Cycle" = 'EXM'
+AND "DFX Form" = '1000'
+AND "DFX Column" = '1'
+AND "DFX Line" = '40' THEN "Monthly_Variance"
+END AS "Segment Earnings Monthly Actual",
+-------------------
+CASE WHEN "DFX Cycle" = 'EXM'
+AND "DFX Form" = '1000'
+AND "DFX Column" = '1'
+AND "DFX Line" = '10' THEN "Monthly_Variance"
 END AS "Op Earn Monthly Actual",
 
-Case when "Metric Key" =
-'UXM/2000/0110/02' then "Dataflex Value"
-end as "Op Earn YTD Actual",
-
-CASE WHEN
-"Metric Key" = 'USF/1000/0010/01'
-THEN "Monthly_Variance"
+CASE WHEN "DFX Cycle" = 'USF'
+AND "DFX Form" = '1000'
+AND "DFX Column" = '1'
+AND "DFX Line" = '10' THEN "Monthly_Variance"
 END AS "Op Earn Monthly Plan",
 
-case when "Metric Key" =
-'USF/1000/0010/01' then "Dataflex Value"
-end as "Op Earn YTD Plan",
-
-CASE WHEN "DFX Form" = '1000'
-AND "DFX Cycle" = 'EXM'
-AND "DFX Line" = 'Other Earnings Events' THEN "Monthly_Variance"
+CASE WHEN "DFX Cycle" = 'EXM'
+AND "DFX Form" = '1000'
+AND "DFX Column" = '1'
+AND "DFX Line" = '20' THEN "Monthly_Variance"
 END AS "OEE Monthly Actual",
 
-CASE WHEN "DFX Form" = '1000'
-AND "DFX Cycle" = 'EXM'
-AND "DFX Line" = 'Other Earnings Events' THEN "Dataflex Value"
-END AS "OEE YTD Actual",
+CASE WHEN "DFX Cycle" = 'USF'
+AND "DFX Form" = '1000'
+AND "DFX Column" = '1'
+AND "DFX Line" = '20' THEN "Monthly_Variance"
+END AS "OEE Monthly Plan",
+
+
+CASE WHEN "DFX Cycle" = 'EXM'
+AND "DFX Form" = '1000'
+AND "DFX Column" = '1'
+AND "DFX Line" in ('20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39') THEN "Monthly_Variance"
+END AS "Others incluidng OEE Earnings Monthly Actual",
+
+CASE WHEN "DFX Cycle" = 'USF'
+AND "DFX Form" = '1000'
+AND "DFX Column" = '1'
+AND "DFX Line" = '40' THEN "Monthly_Variance"
+END AS "Segment Earnings Monthly Plan",
+
+
+-- CASE WHEN
+-- "Metric Key" = 'UXM/2000/0110/01'
+-- THEN "Monthly_Variance"
+-- END AS "Op Earn Monthly Actual",
+
+-- Case when "Metric Key" =
+-- 'UXM/2000/0110/02' then "Dataflex Value"
+-- end as "Op Earn YTD Actual",
+
+-- CASE WHEN
+-- "Metric Key" = 'USF/1000/0010/01'
+-- THEN "Monthly_Variance"
+-- END AS "Op Earn Monthly Plan",
+
+-- case when "Metric Key" =
+-- 'USF/1000/0010/01' then "Dataflex Value"
+-- end as "Op Earn YTD Plan",
+
+-- CASE WHEN "DFX Form" = '1000'
+-- AND "DFX Cycle" = 'EXM'
+-- AND "DFX Line" = 'Other Earnings Events' THEN "Dataflex Value"
+-- END AS "OEE YTD Actual",
 
 ////////////////////////////////////Capex///////////////////////////////////////
 
